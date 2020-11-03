@@ -1,0 +1,184 @@
+<registry version="0.4.5">
+	<savegame>
+		<tool>
+			<sledge>
+				<enabled value="1"/>
+			</sledge>
+			<spraycan>
+				<enabled value="1"/>
+			</spraycan>
+			<extinguisher>
+				<enabled value="1"/>
+			</extinguisher>
+			<blowtorch>
+				<enabled value="1"/>
+				<ammo value="40"/>
+			</blowtorch>
+			<shotgun>
+				<enabled value="1"/>
+			</shotgun>
+			<plank>
+				<enabled value="1"/>
+			</plank>
+			<pipebomb>
+				<enabled value="1"/>
+				<ammo value="24"/>
+				<damage value="4"/>
+			</pipebomb>
+			<gun>
+				<enabled value="1"/>
+			</gun>
+			<rocket>
+				<enabled value="1"/>
+				<ammo value="24"/>
+				<damage value="30"/>
+			</rocket>
+		</tool>
+		<message>
+			<boss_intro value="2"/>
+			<mall_intro value="2"/>
+			<boss_busted value="2"/>
+			<lee_computers value="2"/>
+			<lee_login value="2"/>
+			<boss_coffee value="2"/>
+			<marina_demolish value="2"/>
+			<marina_cars value="2"/>
+			<marina_gps value="2"/>
+			<mansion_pool value="2"/>
+			<marina_gps_reminder value="2"/>
+			<lee_safe value="2"/>
+			<lee_safe_done value="2"/>
+			<lee_tower value="2"/>
+			<boss_encourage_1 value="2"/>
+			<mansion_art value="2"/>
+			<marina_tools value="2"/>
+			<marina_art_back value="2"/>
+			<marina_art_back_done value="2"/>
+			<mansion_fraud value="2"/>
+			<caveisland_computers value="2"/>
+			<mansion_race value="2"/>
+		</message>
+		<mission>
+			<mall_intro value="1">
+				<score value="1"/>
+				<timeleft value="-1.0"/>
+				<missiontime value="259.22144"/>
+			</mall_intro>
+			<lee_computers value="1">
+				<score value="3"/>
+				<timeleft value="-1.0"/>
+				<missiontime value="284.67706"/>
+			</lee_computers>
+			<lee_login value="1">
+				<score value="3"/>
+				<timeleft value="19.1357"/>
+				<missiontime value="490.05353"/>
+			</lee_login>
+			<marina_demolish value="1">
+				<score value="3"/>
+				<timeleft value="41.77741"/>
+				<missiontime value="763.39117"/>
+			</marina_demolish>
+			<marina_cars value="1">
+				<score value="2"/>
+				<timeleft value="28.34726"/>
+				<missiontime value="264.76721"/>
+			</marina_cars>
+			<marina_gps value="1">
+				<score value="3"/>
+				<timeleft value="29.69223"/>
+				<missiontime value="519.20959"/>
+			</marina_gps>
+			<mansion_pool value="1">
+				<score value="3"/>
+				<timeleft value="16.96841"/>
+				<missiontime value="567.65887"/>
+			</mansion_pool>
+			<lee_safe value="1">
+				<score value="1"/>
+				<timeleft value="5.05616"/>
+				<missiontime value="538.77747"/>
+			</lee_safe>
+			<lee_tower value="1">
+				<score value="1"/>
+				<timeleft value="-1.0"/>
+				<missiontime value="392.91925"/>
+			</lee_tower>
+			<mansion_art value="1">
+				<score value="4"/>
+				<timeleft value="3.02304"/>
+				<missiontime value="975.24884"/>
+			</mansion_art>
+			<marina_art_back value="1">
+				<score value="4"/>
+				<timeleft value="10.02582"/>
+				<missiontime value="608.67529"/>
+			</marina_art_back>
+			<marina_tools value="1">
+				<score value="4"/>
+				<timeleft value="0.84219"/>
+				<missiontime value="786.23108"/>
+			</marina_tools>
+			<mansion_fraud value="1">
+				<score value="3"/>
+				<timeleft value="0.10249"/>
+				<missiontime value="516.21936"/>
+			</mansion_fraud>
+			<caveisland_computers value="1"/>
+			<mansion_race value="1">
+				<score value="1"/>
+				<timeleft value="-1.0"/>
+				<missiontime value="111.6475"/>
+			</mansion_race>
+		</mission>
+		<lastcompleted value="mansion_race"/>
+		<hub>
+			<score value="36"/>
+			<hub2 value="1"/>
+			<hub3 value="1"/>
+			<hub4 value="1"/>
+			<hub5 value="1"/>
+			<hub6 value="1"/>
+			<hub7 value="1"/>
+			<hub8 value="1"/>
+			<hub9 value="1"/>
+			<hub10 value="1"/>
+		</hub>
+		<valuable>
+			<lee_painting1 value="1"/>
+			<lee_painting2 value="1"/>
+			<lee_painting4 value="1"/>
+			<lee_screwdriver value="1"/>
+			<lee_stair_toolbox value="1"/>
+			<lee_cash4 value="1"/>
+			<marina_cashregister value="1"/>
+			<marina_vacuum value="1"/>
+			<marina_sword value="1"/>
+			<marina_swordfish value="1"/>
+			<marina_trophy value="1"/>
+			<marina_painting1 value="1"/>
+			<marina_walkietalkie value="1"/>
+			<marina_sextant value="1"/>
+			<marina_lifevest value="1"/>
+			<mansion_foodprocessor value="1"/>
+			<mansion_silverware value="1"/>
+			<marina_sunglasses value="1"/>
+			<lee_tilecutter value="1"/>
+			<lee_cash2 value="1"/>
+			<lee_comics value="1"/>
+			<lee_disccutter value="1"/>
+			<mansion_trophy value="1"/>
+			<mansion_bronzestatue value="1"/>
+			<mansion_dictaphone value="1"/>
+			<mansion_soup value="1"/>
+			<vacuumcleaner value="1"/>
+			<mansion_walkman value="1"/>
+			<marina_binoculars value="1"/>
+			<marina_modelship value="1"/>
+			<fraud_toolbox value="1"/>
+			<marina_dagger value="1"/>
+		</valuable>
+		<cash value="10000"/>
+	</savegame>
+</registry>
+
