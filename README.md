@@ -13,3 +13,7 @@ Unlock Teardown's maximum blast range limit and turn the rocket launcher into a 
 - Launch the game with `teardown_modded.exe`, play Campaign and check your computer :)
 
 ![Tools](screenshots/tools.png)
+
+## Notice
+
+Please use the stable version of the game on Steam (not the experimental branch). Otherwise you may run into problems launching the game.
