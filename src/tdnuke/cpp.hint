@@ -1,0 +1,2 @@
+#define TDNUKE_API __declspec(dllexport)
+#define TDNUKE_API __declspec(dllimport)
