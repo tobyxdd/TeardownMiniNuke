@@ -17,3 +17,9 @@ Unlock Teardown's maximum blast range limit and turn the rocket launcher into a 
 ## Notice
 
 Please use the stable version of the game on Steam (not the experimental branch). Otherwise you may run into problems launching the game.
+
+## For Other Modders
+
+This project also serves as an explosion radius limit remover, allowing you to bypass the hardcoded limit and specify any explosion radius in your scripts.
+
+`Explosion(t.pos, 20)`

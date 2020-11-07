@@ -181,22 +181,33 @@
 
 #include "framework.h"
 
-#define PATCH_OFFSET 0xC40E5
-#define PATCH_ORIG_SIG 0x5D0F41F3
-#define PATCH_NOP 0x90
-#define PATCH_NOP_LENGTH 5
+#define ROCKET_CLAMP_OFFSET 0xC40E5
+#define ROCKET_CLAMP_SIG 0x5D0F41F3
+#define ROCKET_CLAMP_LENGTH 5
+
+#define EXPLOSION_CLAMP_OFFSET 0x112595
+#define EXPLOSION_CLAMP_SIG 0x355D0FF3
+#define EXPLOSION_CLAMP_LENGTH 8
+
+void nop(void* addr, size_t length) {
+	DWORD oldProtect;
+	VirtualProtect(addr, length, PAGE_EXECUTE_READWRITE, &oldProtect);
+	memset(addr, 0x90, length);
+}
 
 DWORD WINAPI patch(LPVOID lpParam) {
 	Sleep(5000);
-	UINT_PTR patchAddr = (UINT_PTR)GetModuleHandle(NULL) + PATCH_OFFSET;
-	if (*(UINT32*)patchAddr != PATCH_ORIG_SIG) {
+
+	UINT_PTR base = (UINT_PTR)GetModuleHandle(NULL);
+	UINT_PTR rocketAddr = base + ROCKET_CLAMP_OFFSET, explosionAddr = base + EXPLOSION_CLAMP_OFFSET;
+
+	if (*(UINT32*)rocketAddr != ROCKET_CLAMP_SIG || *(UINT32*)explosionAddr != EXPLOSION_CLAMP_SIG) {
 		MessageBoxA(0, "Failed to find the correct instruction to patch. This may be because you are using a version of the game that is not yet supported.", "Nuke", MB_ICONERROR);
 		return 1;
 	}
-	DWORD oldProtect;
-	VirtualProtect((void*)patchAddr, PATCH_NOP_LENGTH, PAGE_EXECUTE_READWRITE, &oldProtect);
-	memset((void*)patchAddr, PATCH_NOP, PATCH_NOP_LENGTH); // NOP
-	return 0;
+
+	nop((void*)rocketAddr, ROCKET_CLAMP_LENGTH);
+	nop((void*)explosionAddr, EXPLOSION_CLAMP_LENGTH);
 }
 
 BOOL APIENTRY DllMain(HMODULE hModule,
