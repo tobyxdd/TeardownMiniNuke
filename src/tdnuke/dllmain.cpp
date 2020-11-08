@@ -181,13 +181,18 @@
 
 #include "framework.h"
 
-#define ROCKET_CLAMP_OFFSET 0xC40E5
-#define ROCKET_CLAMP_SIG 0x5D0F41F3
-#define ROCKET_CLAMP_LENGTH 5
+struct patchPoint {
+	const char* name;
+	UINT_PTR offset;
+	size_t length;
+	UINT32 sig;
+};
 
-#define EXPLOSION_CLAMP_OFFSET 0x112595
-#define EXPLOSION_CLAMP_SIG 0x355D0FF3
-#define EXPLOSION_CLAMP_LENGTH 8
+patchPoint nopPoints[] = {
+	{"rocket_max",0xC40E5,5,0x5D0F41F3},
+	{"explosion_min",0x112579,8,0x355F0FF3},
+	{"explosion_max",0x112595,8,0x355D0FF3}
+};
 
 void nop(void* addr, size_t length) {
 	DWORD oldProtect;
@@ -199,15 +204,20 @@ DWORD WINAPI patch(LPVOID lpParam) {
 	Sleep(5000);
 
 	UINT_PTR base = (UINT_PTR)GetModuleHandle(NULL);
-	UINT_PTR rocketAddr = base + ROCKET_CLAMP_OFFSET, explosionAddr = base + EXPLOSION_CLAMP_OFFSET;
 
-	if (*(UINT32*)rocketAddr != ROCKET_CLAMP_SIG || *(UINT32*)explosionAddr != EXPLOSION_CLAMP_SIG) {
-		MessageBoxA(0, "Failed to find the correct instruction to patch. This may be because you are using a version of the game that is not yet supported.", "Nuke", MB_ICONERROR);
-		return 1;
+	for (int i = 0; i < sizeof(nopPoints) / sizeof(nopPoints[0]); i++) {
+		UINT_PTR addr = base + nopPoints[i].offset;
+		if (*(UINT32*)addr != nopPoints[i].sig) {
+			char buf[128];
+			snprintf(buf, 128, "Failed to patch %s. This may be because you are using a version of the game that is not yet supported.", nopPoints[i].name);
+			MessageBoxA(0, buf, "Nuke", MB_ICONERROR);
+		}
+		else {
+			nop((void*)addr, nopPoints[i].length);
+		}
 	}
 
-	nop((void*)rocketAddr, ROCKET_CLAMP_LENGTH);
-	nop((void*)explosionAddr, EXPLOSION_CLAMP_LENGTH);
+	return 0;
 }
 
 BOOL APIENTRY DllMain(HMODULE hModule,
