@@ -1,5 +1,6 @@
 #include "missions.lua"
 #include "messages.lua"
+#include "challenges.lua"
 
 ------------------------------------------------------------------------------
 -- Levels
@@ -61,7 +62,7 @@ gLevels["frustrum"] =
 	map_title = "Frustrum",
 	map_x = 829,
 	map_y = 580,
-	title = "Frustum",
+	title = "Frustrum",
 	image = "terminal/level/frustrum.png",
 	desc = "Tiny village of Frustrum along the Löckelle river, featuring an upscale hotel, a nightclub and a gas station.",
 }
@@ -255,6 +256,7 @@ gSandbox =
 	{ id="marina_sandbox", level="marina", name="Marina", image="menu/level/marina.png", file="marina.xml", layers="sandbox"},
 	{ id="mansion_sandbox", level="mansion", name="Villa Gordon", image="menu/level/mansion.png", file="mansion.xml", layers="sandbox"},
 	{ id="caveisland_sandbox", level="caveisland", name="Hollowrock", image="menu/level/caveisland.png", file="caveisland.xml", layers="sandbox"},
+	{ id="frustrum_sandbox", level="frustrum", name="Frustrum", image="menu/level/frustrum.png", file="frustrum.xml", layers="sandbox"},
 }
 	
 
@@ -277,5 +279,5 @@ function startHub()
 	if GetInt("savegame.mission.caveisland_propane.score") > 0 then current = 14 end
 	if GetInt("savegame.mission.caveisland_dishes.score") > 0 then current = 15 end
 	if GetInt("savegame.mission.frustrum_chase.score") > 0 then current = 16 end
-	Command("game.startmission", "hub"..current, "hub.xml", "v"..current)
+	StartLevel("hub"..current, "hub.xml", "v"..current)
 end

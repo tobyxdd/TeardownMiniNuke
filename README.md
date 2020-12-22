@@ -2,6 +2,8 @@
 
 Unlock Teardown's maximum blast range limit and turn the rocket launcher into a mini nuke launcher.
 
+Currently supported game version: **0.5.2**
+
 ![1](screenshots/1.gif)
 ![2](screenshots/2.gif)
 
@@ -9,7 +11,6 @@ Unlock Teardown's maximum blast range limit and turn the rocket launcher into a 
 
 - Place `winmm.dll` in the game's directory
 - Replace the game's `data/game.lua` with the file of the same name from this mod
-- Replace your save file (`C:\Users\[USERNAME]\Documents\Teardown\savegame.xml`) with the file from this mod
 - Launch the game, play Campaign and check your in-game computer for rocket launcher upgrades
 
 ![Tools](screenshots/tools.png)
