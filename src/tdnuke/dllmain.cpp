@@ -189,9 +189,9 @@ struct patchPoint {
 };
 
 patchPoint nopPoints[] = {
-	{"rocket_max",0xC6C55,5,0x5D0F41F3},
-	{"explosion_min",0x114999,8,0x355F0FF3},
-	{"explosion_max",0x1149B5,8,0x355D0FF3}
+	{"rocket_max",0xC77F5,5,0x5D0F41F3},
+	{"explosion_min",0x119749,8,0x355F0FF3},
+	{"explosion_max",0x119765,8,0x355D0FF3}
 };
 
 void nop(void* addr, size_t length) {

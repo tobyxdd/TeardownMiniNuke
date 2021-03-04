@@ -219,7 +219,7 @@ gTools =
 		upgrades=
 		{
 			{ id="ammo", name="Rounds", desc="The number of rockets you have at the start of a mission", default=6, max=24, step=6, price=500 },
-			{ id="damage", name="Blast", desc="How much damage it makes.", default=5, max=100, step=5, price=1 },
+			{ id="damage", name="Blast", desc="How much damage it makes.", default=3, max=50, step=1, price=1 },
 		}
 	},
 }
@@ -259,9 +259,8 @@ gSandbox =
 	{ id="frustrum_sandbox", level="frustrum", name="Frustrum", image="menu/level/frustrum.png", file="frustrum.xml", layers="sandbox"},
 }
 	
-
-
-function startHub()
+	
+function getHubVersion()
 	local current = 0
 	if GetInt("savegame.mission.mall_intro.score") > 0 then current = 1 end
 	if GetInt("savegame.mission.lee_computers.score") > 0 then current = 2 end
@@ -279,5 +278,11 @@ function startHub()
 	if GetInt("savegame.mission.caveisland_propane.score") > 0 then current = 14 end
 	if GetInt("savegame.mission.caveisland_dishes.score") > 0 then current = 15 end
 	if GetInt("savegame.mission.frustrum_chase.score") > 0 then current = 16 end
-	StartLevel("hub"..current, "hub.xml", "v"..current)
+	return current
+end
+
+
+function startHub()
+	local v = getHubVersion()
+	StartLevel("hub"..v, "hub.xml", "v"..v)
 end

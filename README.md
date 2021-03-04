@@ -2,7 +2,7 @@
 
 Unlock Teardown's maximum blast range limit and turn the rocket launcher into a mini nuke launcher.
 
-Currently supported game version: **0.5.2**
+Currently supported game version: **0.6**
 
 ![1](screenshots/1.gif)
 ![2](screenshots/2.gif)
